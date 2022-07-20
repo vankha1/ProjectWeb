@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url(Pubg-img/logo.jpg);
+            background-size: cover;
+            background-position: center;
+            cursor: url(Pubg-img/aim-cursor.png), pointer;
+        }
+        span {
+            position: absolute;
+            width: 40px;
+            height: 38px;
+            background: url(Pubg-img/hole.png);
+            transform: translate(28px, 29px);
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <audio id="audio" src="Pubg-img/sound.wav" autostart = "false"></audio>
+    </section>
+    <script>
+        document.addEventListener("click", function(e){
+            var body = document.querySelector("body");
+            var bullet = document.createElement("span");
+            var x = e.offsetX;
+            var y = e.offsetY;
+
+            bullet.style.left = x + "px";
+            bullet.style.top = y + "px";
+
+            body.appendChild(bullet);
+
+            var audio = document.getElementById("audio");
+            audio.play();
+        })
+        
+    </script>
+</body>
+</html>

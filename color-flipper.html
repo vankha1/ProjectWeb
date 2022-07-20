@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Kaushan+Script&family=Lato:wght@400;900&family=Open+Sans:wght@500;700&family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <title>Color Flipper </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .header {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #FFFF;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .header .name {
+            color: #49A6E9;
+            margin-right: -20px;
+        }
+        .header .other {
+            margin-left: -20px;
+        }
+        #content {
+            background-color: red;
+            width: 100%;
+            height: 744px;
+        }
+        #content h2 {
+            width: auto;
+            height: 72px;
+            margin: 0 0 40px;
+            background-color: #222222;
+            padding: 8px 16px 16px;
+            border-radius: 0.5rem;
+            font-size: 2.5rem;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            position: absolute;
+            top:40%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        #content h2 span {
+            color: #49A6E9;
+        }
+        #content button {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: transparent;
+            width: 148px;
+            height: 48px;
+            padding: 12px 20px;
+            font-size: 16px;    
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s;
+            letter-spacing: 2px;
+        }
+        #content button:hover {
+            color: white;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">
+            Color Flipper
+        </div>
+        <div class="other">
+            Simple Hex
+        </div>
+    </div>
+    <div id="content">
+        <h2>Background Color : <span class="color"></span></h2>
+        
+        <button class="contact" onclick="changeColor()">CLICK ME</button>
+    </div>
+
+    <script>
+        // const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+        function changeColor() {
+            const colorChange = document.querySelector('.color');
+            const backgroundChange = document.getElementById('content');
+            
+            let para1 = Math.floor(Math.random() * 255);
+            let para2 = Math.floor(Math.random() * 255);
+            let para3 = Math.floor(Math.random() * 255);
+            // let numberColor = Math.floor(Math.random() * 3);
+            
+            const color = `rgb(${para1}, ${para2}, ${para3})`;
+            backgroundChange.style.backgroundColor = color;
+            colorChange.textContent = `rgb(${para1}, ${para2}, ${para3})`;
+            // colorChange.textContent = colors[numberColor];
+        }
+    </script>
+</body>
+</html>

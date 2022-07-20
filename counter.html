@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Kaushan+Script&family=Lato:wght@400;900&family=Open+Sans:wght@500;700&family=Poppins:wght@100&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+    <title>Counter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            
+        }
+        .container {
+            /* text-align: center; */
+            width: 100%;
+            height: 100vh;
+            background-color: hsl(206deg 33% 96%);
+        }
+        .content {
+            position: absolute;
+            top:30%;
+            left: 50%;
+            transform: translate(-50%);
+            text-align: center;
+        }
+        .content h2 {
+            font-size: 70px;
+            margin-bottom: 12px;
+            letter-spacing: 5px;
+            font-weight: 600;
+        }
+        .content span {
+            font-size: 100px;
+            color: #000;
+        }
+        .content .button {
+            margin-top: 20px;
+        }
+        .content .button button{
+            margin: 8px;
+            padding: 6px 12px;
+            font-size: 0.875rem;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            border-radius: 10px;
+            border: 1px solid #000;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .content .button button:hover {
+            color: #fff;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>Counter</h2>
+            <span id="number">0</span>
+        
+            <div class="button">
+                <button class="des">Decrease</button>
+                <button class="res">Reset</button>
+                <button class="in">Increase</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const decrease = document.querySelector('.des');
+        const reset = document.querySelector('.res');
+        const increase = document.querySelector('.in');
+
+        const number = document.getElementById('number');
+        let value = number.innerText;
+        decrease.addEventListener('click', () => {
+            value = (+value) - 1;
+            if (value > 0) {
+                number.style.color = "green";
+            }
+            else if (value == 0) number.style.color = "black";
+            else number.style.color = "red";
+            number.textContent = value;
+        })
+        reset.addEventListener('click', () => {
+            value = 0;
+            number.style.color = "black";
+            number.textContent = value;
+        })
+        increase.addEventListener('click', () => {
+            value = (+value) + 1;
+            if (value > 0) {
+                number.style.color = "green";
+            }
+            else if (value == 0) number.style.color = "black";
+            else number.style.color = "red";
+            number.textContent = value;
+        })
+    </script>
+</body>
+</html>

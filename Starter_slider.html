@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Kaushan+Script&family=Lato:wght@400;900&family=Open+Sans:wght@500;700&family=Poppins:wght@100&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1f91b0e9aa.js" crossorigin="anonymous"></script>
+    <title>Starter Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container {
+            width: 100%;
+            height: 100vh;
+            background-color:  hsl(206deg 33% 96%);
+        }
+        #container .content {
+            width: 620px;
+            text-align: center;
+            position: absolute;
+            top:15%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        #container .title {
+            width: 100%;
+            margin-bottom: 64px;
+        }
+        #container .title .underline {
+            margin: 0 auto;
+            background-color: #49a6E9;
+            width: 80px;
+            height: 4px;
+        }
+        #container .title h2 {
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+        }
+        #container .review {
+            width: 620px;
+            height: 418px;
+            background: #FFFFFF;
+            padding: 24px 32px;
+        }
+        #container .review .avatar {
+            position: relative;
+        }
+        #container .review .avatar i {
+            position: absolute;
+            top: 5%;
+            left: 37%;
+            color: #fff;
+            font-size: 21px;
+            background-color: #49a6E9;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            padding-top: 8px;
+        }
+        #container .review img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 8px -5px 0 #49a6E9;
+            margin-bottom: 1.5rem;
+        }
+        #container .review .avatar h4 {
+            margin-bottom: 4px;
+            letter-spacing: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        #container .review .avatar p {
+            margin-bottom: 8px;
+            font-size: 13.6px;
+            color: #49a6E9;
+            font-family: 'Open Sans', sans-serif;
+            height: 20.4px;
+        }
+        #container .review .info {
+            color: hsl(210deg 22% 49%);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #container .review .button-container {
+            margin-bottom: 8px;
+        }
+        #container .review .button-container button{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0 8px;
+            color: hsl(205deg 90% 76%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #container .review .button-container button:hover{
+            color: #49a6E9;
+        }
+        #container .review  .changeInfoBtn {
+            width: 92px;
+            height: 28px;
+            padding: 0.25rem 0.5rem;
+            color: hsl(205deg 78% 60%);
+            border-color: hsl(205deg 78% 60%);
+            background-color: hsl(205deg 100% 96%);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #container .review  .changeInfoBtn:hover {
+            color: #000;
+            background-color: #49a6E9;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="content">
+            <div class="title">
+                <h2>Our reviews</h2>
+                <div class="underline"></div>
+            </div>
+            <!-- ------------------------------------------ -->
+            <div class="review">
+                <div class="avatar">
+                    <img src="Starter-Slider/person-1.jpg" id="ava-img" alt="avatar">
+                    <i class="fa-solid fa-quote-right"></i>
+                    <h4 class="name">Susan Smith</h4>
+                    <p class="position">WEB DEVELOPER</p>
+                </div>
+    
+                <p class="info">I'm baby meggings twee health goth +1.
+                     Bicycle rights tumeric chartreuse before they sold out chambray pop-up.
+                     Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry
+                </p>
+    
+                <div class="button-container">
+                    <button class="preBtn" ><i class="fas fa-chevron-left"></i></button>
+                    <button class="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+    
+                <button class="changeInfoBtn">Surprise me</button>
+    
+            </div>
+    </div>
+    <script src="starter_slider.js"></script>
+</body>
+</html>

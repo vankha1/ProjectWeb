@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background-color: #373737;
+            position: relative;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f9f9f9;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        #form {
+            position: relative;
+        }
+        #email {
+            /* position: relative; */
+            width: 300px;
+            height: 50px;
+            background-color: #292929;
+            outline: none;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            color: #fff;
+            font-style: 18px;
+            font-size: 16px;
+        }
+        .inputBox {
+            position: relative;
+        }
+        #text {
+            color: #ff0000;
+            font-style: italic;
+            display: block;
+            padding: 5px;
+            font-weight: 300;
+        }
+        #form.invalid .inputBox:before {
+            content: "";
+            position: absolute;
+            top:12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            background: url(invalid-btn.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+        #form.valid .inputBox:before {
+            content: "";
+            position: absolute;
+            top:12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            background: url(valid-btn.png);
+            background-size: cover;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Email Validation Check</h3>
+        <form id="form" action="#">
+            <div class="inputBox">
+                <input type="text" name="" id="email" placeholder="Enter Email Address" onkeydown="validation()">
+                <span id="text"></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        function validation () {
+            var form = document.getElementById("form");
+            var email = document.getElementById("email").value;
+            var text = document.getElementById("text");
+            var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (email.match(pattern)){
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+
+                text.innerText = "Your address email is valid";
+                text.style.color = "#00ff00";
+            }
+            else {
+                form.classList.remove("valid");
+                form.classList.add("invalid");
+                text.innerText = "Enter again your address email";
+                text.style.color = "#ff0000";
+            }
+            if (email === "") {
+                form.classList.remove("valid");
+                form.classList.add("invalid");
+                text.innerText = "";
+                text.style.color = "#ff0000";
+            }
+        }
+    </script>
+</body>
+</html>
