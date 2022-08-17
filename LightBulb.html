@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb On and Off Toggle Switch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        label{
+            position: relative;
+            top: -20%;
+            background: #212121;
+            border-radius: 10px;
+            width: 150px;
+            height: 70px;
+            z-index: 100;
+        }
+        label input {
+            appearance: none;
+        }
+        label span {
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 75px;
+            height: 70px;
+            background: #333;
+            border: 4px solid #212121;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        label input:checked ~ span {
+            transform: translateX(75px);
+        }
+        label span ion-icon {
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: #fff;
+        }
+        label input:checked ~ span ion-icon {
+            filter: drop-shadow(0px 0px 4px #fff) drop-shadow(0px 0px 8px #fff);
+        }
+        .bulb {
+            position: absolute;
+            top: 400%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 348px;
+            height: 408px;
+            background: url(Bulb/Images/bulb_off.jpg);
+            transition: 0.5s;
+            /* z-index: -1; */
+        }
+        label input:checked ~ .bulb {
+            background: url(Bulb/Images/bulb_on.jpg);
+        }
+        /* .bulb1 {
+            width: 348px;
+            height: 408px;
+            transition: 0.5s;
+            z-index: -1;
+        } */
+    </style>
+</head>
+<body>
+    <label>
+        <input id="button" type="checkbox">
+        <span id="check" onclick="onLight()"><ion-icon name="bulb-outline"></ion-icon></span>
+        <div class="bulb"></div>
+    </label>
+    <!-- <div class="bulb1">
+        <img src ="Bulb/Images/bulb_off.jpg" id="light">
+    </div>
+    <script>
+        function onLight(){
+            if (document.getElementById("light").src.match("Bulb/Images/bulb_off.jpg")){
+                document.getElementById("light").src = "Bulb/Images/bulb_on.jpg";
+            }
+            else {
+                document.getElementById("light").src = "Bulb/Images/bulb_off.jpg";
+            }
+        }
+        
+    </script> -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
